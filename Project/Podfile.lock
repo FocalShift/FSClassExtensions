@@ -1,0 +1,14 @@
+PODS:
+  - FSClassExtensions (1.0.0)
+
+DEPENDENCIES:
+  - FSClassExtensions (from `../FSClassExtensions.podspec`)
+
+EXTERNAL SOURCES:
+  FSClassExtensions:
+    :path: ../FSClassExtensions.podspec
+
+SPEC CHECKSUMS:
+  FSClassExtensions: 3dbf930fee8e2804658dc64c3415560587d6c63d
+
+COCOAPODS: 0.27.0
