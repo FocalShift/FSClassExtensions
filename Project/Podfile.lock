@@ -9,6 +9,6 @@ EXTERNAL SOURCES:
     :path: ../FSClassExtensions.podspec
 
 SPEC CHECKSUMS:
-  FSClassExtensions: 3dbf930fee8e2804658dc64c3415560587d6c63d
+  FSClassExtensions: ca22e71c0ce140a1b7f5e4fcd9453b357b5c7167
 
 COCOAPODS: 0.27.0

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "FSClassExtensions"
-    s.version      = "1.0.0"
+    s.version      = "1.1.0"
     s.homepage     = "https://github.com/FocalShift/FSClassExtensions"
     s.summary      = "FocalShift Objective-C Class Extensions"
     s.authors      =    { 
@@ -11,8 +11,18 @@ Pod::Spec.new do |s|
                             :git => "https://github.com/FocalShift/FSClassExtensions.git",
                             :tag => "#{s.version}"
                         }
+
+    s.default_subspec = 'Shared'
+    s.subspec "Shared" do |sp|
+        sp.source_files = 'Classes/ios/Shared/*.{h,m}'
+    end
+
+    s.subspec "SenTesting" do |sp|
+        sp.frameworks = 'SenTestingKit'
+        sp.source_files = 'Classes/ios/SenTestingKit/*.{h,m}', 'Classes/ios/Testing/*.{h,m}'
+    end
+
     s.platform = :ios
-    s.ios.deployment_target = '7.0'
-    s.source_files = 'Classes/ios/*.{h,m}'
+    s.ios.deployment_target = '6.1'
     s.requires_arc = true
 end
