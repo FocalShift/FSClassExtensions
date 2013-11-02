@@ -1,8 +1,9 @@
 Pod::Spec.new do |s|
     s.name         = "FSClassExtensions"
-    s.version      = "1.1.0"
+    s.version      = "1.1.1"
     s.homepage     = "https://github.com/FocalShift/FSClassExtensions"
     s.summary      = "FocalShift Objective-C Class Extensions"
+    s.license      = { :type => 'MIT', :file => 'LICENSE' }
     s.authors      =    { 
                             'Bennett Smith'         => 'bennett@focalshift.com',
                             'Terry Tucker'          => 'terry@focalshift.com' 
