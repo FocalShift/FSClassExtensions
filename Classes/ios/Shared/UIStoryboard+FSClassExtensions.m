@@ -39,7 +39,13 @@
     else {
         deviceSpecificStoryboardName = storyboardName;
     }
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:deviceSpecificStoryboardName bundle:storyboardBundleOrNil];
+    UIStoryboard *storyboard = nil;
+    @try {
+        storyboard = [UIStoryboard storyboardWithName:deviceSpecificStoryboardName bundle:storyboardBundleOrNil];
+    }
+    @catch (NSException *exception) {
+        storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:storyboardBundleOrNil];
+    }
     return storyboard;
 }
 

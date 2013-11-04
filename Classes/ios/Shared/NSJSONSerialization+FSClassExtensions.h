@@ -1,5 +1,5 @@
 //
-//  SenTestCase+FSClassExtensions.h
+// NSJSONSerialization+FSClassExtensions.h
 //
 // The MIT License (MIT)
 // 
@@ -24,16 +24,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
 
-@interface SenTestCase (FSClassExtensions)
-
-// Support for testing asynchronous operations.
-- (void)prepareForAsyncTest;
-- (void)signalAsyncTestCompleted;
-- (BOOL)waitForAsyncTestCompletion:(NSTimeInterval)timeoutSecs;
-
-// Support for reading JSON test harness data from the bundle.
-- (id)jsonForTestFixture:(NSString *)fixtureName fromBundle:(NSBundle *)bundle;
-
+@interface NSJSONSerialization (FSClassExtensions)
++ (id)JSONObjectWithTestFixture:(NSString *)fixtureName fromBundle:(NSBundle *)bundle;
 @end
+

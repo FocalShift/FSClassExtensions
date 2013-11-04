@@ -1,5 +1,5 @@
 //
-//  SenTestCase+FSClassExtensions.h
+// NSDate+FSClassExtensions.m
 //
 // The MIT License (MIT)
 // 
@@ -24,16 +24,28 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <SenTestingKit/SenTestingKit.h>
 
-@interface SenTestCase (FSClassExtensions)
+@implementation NSDate (FSClassExtensions)
 
-// Support for testing asynchronous operations.
-- (void)prepareForAsyncTest;
-- (void)signalAsyncTestCompleted;
-- (BOOL)waitForAsyncTestCompletion:(NSTimeInterval)timeoutSecs;
++ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+    return [NSDate dateWithYear:year month:month day:day hour:0 minute:0 second:0];
+}
 
-// Support for reading JSON test harness data from the bundle.
-- (id)jsonForTestFixture:(NSString *)fixtureName fromBundle:(NSBundle *)bundle;
++ (NSDate *)dateWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
+    return [NSDate dateWithYear:0 month:0 day:0 hour:hour minute:minute second:second];
+}
+
++ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    [components setYear:year];
+    [components setMonth:month];
+    [components setDay:day];
+    [components setHour:hour];
+    [components setMinute:minute];
+    [components setSecond:second];
+    return [calendar dateFromComponents:components];
+}
 
 @end
+

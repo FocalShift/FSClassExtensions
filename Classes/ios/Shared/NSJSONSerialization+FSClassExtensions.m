@@ -1,5 +1,5 @@
 //
-//  SenTestCase+FSClassExtensions.m
+// NSJSONSerialization+FSClassExtensions.m
 //
 // The MIT License (MIT)
 // 
@@ -23,32 +23,11 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-#import "SenTestCase+FSClassExtensions.h"
-#import "FSClassExtensionAsyncTestHandler.h"
+#import "NSJSONSerialization+FSClassExtensions.h"
 
-@implementation SenTestCase (FSClassExtensions)
+@implementation NSJSONSerialization (FSClassExtensions)
 
-// ****************************************************************************
-#pragma mark - Testing Asynchronous Operations.
-// ****************************************************************************
-
-- (void)prepareForAsyncTest {
-    [[FSClassExtensionAsyncTestHandler asyncTestHandlerForObject:self] prepareForAsyncTest];
-}
-
-- (void)signalAsyncTestCompleted {
-    [[FSClassExtensionAsyncTestHandler asyncTestHandlerForObject:self] signalAsyncTestCompleted];
-}
-
-- (BOOL)waitForAsyncTestCompletion:(NSTimeInterval)timeoutSecs {
-    return [[FSClassExtensionAsyncTestHandler asyncTestHandlerForObject:self] waitForAsyncTestCompletion:timeoutSecs];
-}
-
-// ****************************************************************************
-#pragma mark - Reading JSON Test Data
-// ****************************************************************************
-
-- (id)jsonForTestFixture:(NSString *)fixtureName fromBundle:(NSBundle *)bundle {
++ (id)JSONObjectWithTestFixture:(NSString *)fixtureName fromBundle:(NSBundle *)bundle {
     NSError *error = nil;
     NSString *fixturePath = [bundle pathForResource:fixtureName ofType:@"json"];
     NSData *fixtureData = [NSData dataWithContentsOfFile:fixturePath];
@@ -57,3 +36,4 @@
 }
 
 @end
+

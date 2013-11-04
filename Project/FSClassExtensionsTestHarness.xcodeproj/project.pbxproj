@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9124480B1824AFF9007F3146 /* SenTestCase+FSClassExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 912448081824AFF9007F3146 /* SenTestCase+FSClassExtensions.m */; };
-		9124480C1824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 9124480A1824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.m */; };
 		91536FD61820AB4D00C0609F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91536FD51820AB4D00C0609F /* Foundation.framework */; };
 		91536FD81820AB4D00C0609F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91536FD71820AB4D00C0609F /* CoreGraphics.framework */; };
 		91536FDA1820AB4D00C0609F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91536FD91820AB4D00C0609F /* UIKit.framework */; };
@@ -40,10 +38,6 @@
 /* Begin PBXFileReference section */
 		4691CCE914984CE4A7592466 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5824848F3AE0482AB2C478D8 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		912448071824AFF9007F3146 /* SenTestCase+FSClassExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SenTestCase+FSClassExtensions.h"; path = "../../Classes/ios/SenTestCase+FSClassExtensions.h"; sourceTree = "<group>"; };
-		912448081824AFF9007F3146 /* SenTestCase+FSClassExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "SenTestCase+FSClassExtensions.m"; path = "../../Classes/ios/SenTestCase+FSClassExtensions.m"; sourceTree = "<group>"; };
-		912448091824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSClassExtensionAsyncTestHandler.h; path = ../../Classes/ios/FSClassExtensionAsyncTestHandler.h; sourceTree = "<group>"; };
-		9124480A1824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSClassExtensionAsyncTestHandler.m; path = ../../Classes/ios/FSClassExtensionAsyncTestHandler.m; sourceTree = "<group>"; };
 		91536FD21820AB4D00C0609F /* FSClassExtensionsTestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FSClassExtensionsTestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91536FD51820AB4D00C0609F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		91536FD71820AB4D00C0609F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -126,10 +120,6 @@
 		91536FDB1820AB4D00C0609F /* FSClassExtensionsTestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				912448071824AFF9007F3146 /* SenTestCase+FSClassExtensions.h */,
-				912448081824AFF9007F3146 /* SenTestCase+FSClassExtensions.m */,
-				912448091824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.h */,
-				9124480A1824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.m */,
 				91536FE41820AB4D00C0609F /* FSAppDelegate.h */,
 				91536FE51820AB4D00C0609F /* FSAppDelegate.m */,
 				91536FE71820AB4D00C0609F /* Main_iPhone.storyboard */,
@@ -307,8 +297,6 @@
 			files = (
 				91536FE21820AB4D00C0609F /* main.m in Sources */,
 				91536FE61820AB4D00C0609F /* FSAppDelegate.m in Sources */,
-				9124480C1824AFF9007F3146 /* FSClassExtensionAsyncTestHandler.m in Sources */,
-				9124480B1824AFF9007F3146 /* SenTestCase+FSClassExtensions.m in Sources */,
 				91536FEF1820AB4D00C0609F /* FSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
