@@ -24,6 +24,7 @@
 //
 
 #import "NSObject+FSClassExtensions.h"
+#import <objc/runtime.h>
 
 @implementation NSObject (FSClassExtensions)
 
