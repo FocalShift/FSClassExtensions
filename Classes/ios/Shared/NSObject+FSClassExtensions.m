@@ -40,5 +40,18 @@
     return objc_getAssociatedObject(self, key);
 }
 
+static void *dirtyKey = &dirtyKey;
+
+- (BOOL)isDirty {
+    NSNumber *dirtyFlag = [self associatedValueForKey:dirtyKey];
+    BOOL isDirty = [dirtyFlag boolValue];
+    return isDirty;
+}
+
+- (void)setDirty:(BOOL)dirty {
+    NSNumber *dirtyFlag = [NSNumber numberWithBool:dirty];
+    [self associateValue:dirtyFlag withKey:dirtyKey];
+}
+
 @end
 

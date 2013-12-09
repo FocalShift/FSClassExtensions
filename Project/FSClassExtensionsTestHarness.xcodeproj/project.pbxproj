@@ -21,7 +21,7 @@
 		91536FF91820AB4D00C0609F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91536FD51820AB4D00C0609F /* Foundation.framework */; };
 		91536FFA1820AB4D00C0609F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91536FD91820AB4D00C0609F /* UIKit.framework */; };
 		915370021820AB4D00C0609F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 915370001820AB4D00C0609F /* InfoPlist.strings */; };
-		915370041820AB4D00C0609F /* FSClassExtensionsTestHarnessTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 915370031820AB4D00C0609F /* FSClassExtensionsTestHarnessTests.m */; };
+		91FF0EB5182D96CF00CC5D46 /* NSObject+FSClassExtensionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91FF0EB4182D96CF00CC5D46 /* NSObject+FSClassExtensionsTests.m */; };
 		B0831754D6054951AFAFDD81 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4691CCE914984CE4A7592466 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +57,7 @@
 		91536FF71820AB4D00C0609F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		91536FFF1820AB4D00C0609F /* FSClassExtensionsTestHarnessTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FSClassExtensionsTestHarnessTests-Info.plist"; sourceTree = "<group>"; };
 		915370011820AB4D00C0609F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		915370031820AB4D00C0609F /* FSClassExtensionsTestHarnessTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FSClassExtensionsTestHarnessTests.m; sourceTree = "<group>"; };
+		91FF0EB4182D96CF00CC5D46 /* NSObject+FSClassExtensionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FSClassExtensionsTests.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +146,8 @@
 		91536FFD1820AB4D00C0609F /* FSClassExtensionsTestHarnessTests */ = {
 			isa = PBXGroup;
 			children = (
-				915370031820AB4D00C0609F /* FSClassExtensionsTestHarnessTests.m */,
 				91536FFE1820AB4D00C0609F /* Supporting Files */,
+				91FF0EB4182D96CF00CC5D46 /* NSObject+FSClassExtensionsTests.m */,
 			);
 			path = FSClassExtensionsTestHarnessTests;
 			sourceTree = "<group>";
@@ -305,7 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				915370041820AB4D00C0609F /* FSClassExtensionsTestHarnessTests.m in Sources */,
+				91FF0EB5182D96CF00CC5D46 /* NSObject+FSClassExtensionsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +459,7 @@
 		};
 		9153700B1820AB4D00C0609F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5824848F3AE0482AB2C478D8 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FSClassExtensionsTestHarness.app/FSClassExtensionsTestHarness";
@@ -482,6 +483,7 @@
 		};
 		9153700C1820AB4D00C0609F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5824848F3AE0482AB2C478D8 /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FSClassExtensionsTestHarness.app/FSClassExtensionsTestHarness";

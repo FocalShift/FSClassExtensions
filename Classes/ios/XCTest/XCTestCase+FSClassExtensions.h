@@ -1,5 +1,5 @@
 //
-// NSObject+FSClassExtensions.h
+//  XCTestCase+FSClassExtensions.h
 //
 // The MIT License (MIT)
 // 
@@ -24,17 +24,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <XCTest/XCTest.h>
 
-@interface NSObject (FSClassExtensions)
+@interface XCTestCase (FSClassExtensions)
 
-// Thanks to Andy Matuschak (See https://github.com/andymatuschak/NSObject-AssociatedObjects)
-- (void)associateValue:(id)value withKey:(void *)key;
-- (void)weaklyAssociateValue:(id)value withKey:(void *)key;
-- (id)associatedValueForKey:(void *)key;
+// Support for testing asynchronous operations.
+- (void)prepareForAsyncTest;
+- (void)signalAsyncTestCompleted;
+- (BOOL)waitForAsyncTestCompletion:(NSTimeInterval)timeoutSecs;
 
-// Dirty flag, used to track whether the properties in the object have changed.
-- (BOOL)isDirty;
-- (void)setDirty:(BOOL)dirty;
+// Support for reading JSON test harness data from the bundle.
+- (id)jsonForTestFixture:(NSString *)fixtureName fromBundle:(NSBundle *)bundle;
 
 @end
-
