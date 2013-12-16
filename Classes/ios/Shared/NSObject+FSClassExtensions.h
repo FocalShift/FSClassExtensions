@@ -36,5 +36,8 @@
 - (BOOL)isDirty;
 - (void)setDirty:(BOOL)dirty;
 
+// Provide a list of subclasses via reflection.
++ (NSArray *)subclassArrayForClass:(Class)parentClass;
+
 @end
 
