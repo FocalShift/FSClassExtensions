@@ -50,7 +50,7 @@
     return YES;
 }
 
-- (void)extractThumbnailImageForAsset:(NSURL *)url handler:(void (^)(UIImage *thumbnail))handler {
++ (void)extractThumbnailImageForAsset:(NSURL *)url handler:(void (^)(UIImage *thumbnail))handler {
     ALAssetsLibraryAssetForURLResultBlock resultsBlock = ^(ALAsset *asset) {
         CGImageRef thumbnailRef = [asset aspectRatioThumbnail];
         UIImage *thumbnail = [UIImage imageWithCGImage:thumbnailRef];
@@ -74,7 +74,7 @@
     [library assetForURL:url resultBlock:resultsBlock failureBlock:failureBlock];
 }
 
-- (void)extractFullResolutionImageForAsset:(NSURL *)url handler:(void (^)(UIImage *fullResolutionImage))handler {
++ (void)extractFullResolutionImageForAsset:(NSURL *)url handler:(void (^)(UIImage *fullResolutionImage))handler {
     ALAssetsLibraryAssetForURLResultBlock resultsBlock = ^(ALAsset *asset) {
         
         ALAssetRepresentation *representation = [asset defaultRepresentation];

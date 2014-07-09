@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FSClassExtensions"
-  s.version          = "1.7.0"
+  s.version          = "1.7.1"
   s.summary          = "FocalShift Objective-C Class Extensions"
   s.description      = <<-DESC
                         A set of useful helper routines, organized as a series of class extensions.

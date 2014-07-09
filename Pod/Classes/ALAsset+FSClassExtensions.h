@@ -32,7 +32,7 @@
 
 - (BOOL)writeToFileURL:(NSURL *)url error:(NSError * __autoreleasing *)error;
 
-- (void)extractThumbnailImageForAsset:(NSURL *)assetURL handler:(void (^)(UIImage *thumbnail))handler;
-- (void)extractFullResolutionImageForAsset:(NSURL *)assetURL handler:(void (^)(UIImage *fullResolutionImage))handler;
++ (void)extractThumbnailImageForAsset:(NSURL *)assetURL handler:(void (^)(UIImage *thumbnail))handler;
++ (void)extractFullResolutionImageForAsset:(NSURL *)assetURL handler:(void (^)(UIImage *fullResolutionImage))handler;
 
 @end
