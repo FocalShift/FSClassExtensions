@@ -23,6 +23,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#import <FSClassExtensions/ALAssetsLibrary+FSClassExtensions.h>
 #import <FSClassExtensions/ALAsset+FSClassExtensions.h>
 #import <FSClassExtensions/NSError+FSClassExtensions.h>
 
@@ -35,14 +36,19 @@
 
     CGImageDestinationRef imageDestination = CGImageDestinationCreateWithURL((__bridge CFURLRef)url, kUTTypeJPEG , 1, NULL);
     if (imageDestination == NULL ) {
-        *error = [NSError errorWithDomain:FSClassExtensionsErrorDomian code:FSClassExtensionsFailedToCreateImageDestination userInfo:nil];
+        if (error) {
+            *error = [NSError errorWithDomain:FSClassExtensionsErrorDomian code:FSClassExtensionsFailedToCreateImageDestination userInfo:nil];
+        }
         return NO;
     }
     
     CGImageDestinationAddImage(imageDestination, image, (__bridge CFDictionaryRef)metadata);
     
     if (CGImageDestinationFinalize(imageDestination) == NO) {
-        *error = [NSError errorWithDomain:FSClassExtensionsErrorDomian code:FSClassExtensionsFailedToFinailzeImageDestination userInfo:nil];
+        if (error) {
+            *error = [NSError errorWithDomain:FSClassExtensionsErrorDomian code:FSClassExtensionsFailedToFinailzeImageDestination userInfo:nil];
+        }
+        CFRelease(imageDestination);
         return NO;
     }
     
@@ -70,7 +76,7 @@
         }
     };
     
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    ALAssetsLibrary *library = [ALAssetsLibrary sharedInstance];
     [library assetForURL:url resultBlock:resultsBlock failureBlock:failureBlock];
 }
 
@@ -106,7 +112,7 @@
         }
     };
     
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    ALAssetsLibrary *library = [ALAssetsLibrary sharedInstance];
     [library assetForURL:url resultBlock:resultsBlock failureBlock:failureBlock];
 }
 
