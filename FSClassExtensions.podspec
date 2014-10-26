@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FSClassExtensions"
-  s.version          = "1.7.1"
+  s.version          = "1.8.0"
   s.summary          = "FocalShift Objective-C Class Extensions"
   s.description      = <<-DESC
                         A set of useful helper routines, organized as a series of class extensions.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/FocalShift/FSClassExtensions.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/focalshift'
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '7.1'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes'
