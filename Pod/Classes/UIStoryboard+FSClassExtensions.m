@@ -40,12 +40,23 @@
         deviceSpecificStoryboardName = storyboardName;
     }
     UIStoryboard *storyboard = nil;
+    // When debugging, avoid unnecessary exceptions when changing storyboards;
+    // the following creates too much exception "noise." First search for the
+    // compiled storyboard within the bundle (main bundle by default) in debug
+    // mode. The implementation assumes that the storyboard compiles to a file
+    // with extension `storyboardc`.
+#if DEBUG
+    NSBundle *bundle = storyboardBundleOrNil ?: [NSBundle mainBundle];
+    NSString *path = [bundle pathForResource:deviceSpecificStoryboardName ofType:@"storyboardc"];
+    storyboard = [UIStoryboard storyboardWithName:path ? deviceSpecificStoryboardName : storyboardName bundle:storyboardBundleOrNil];
+#else
     @try {
         storyboard = [UIStoryboard storyboardWithName:deviceSpecificStoryboardName bundle:storyboardBundleOrNil];
     }
     @catch (NSException *exception) {
         storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:storyboardBundleOrNil];
     }
+#endif
     return storyboard;
 }
 
