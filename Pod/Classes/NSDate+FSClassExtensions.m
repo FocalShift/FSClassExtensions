@@ -24,6 +24,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDate+FSClassExtensions.h"
 
 NSString * const ISODateFormat = @"yyyy-MM-dd";
 NSString * const ISOTimeFormat = @"HH:mm:ss.SSSSSS";
@@ -31,15 +32,34 @@ NSString * const ISOTimeFormat = @"HH:mm:ss.SSSSSS";
 @implementation NSDate (FSClassExtensions)
 
 + (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
-    return [NSDate dateWithYear:year month:month day:day hour:0 minute:0 second:0];
+    return [NSDate dateWithYear:year month:month day:day hour:NSDateComponentUndefined minute:NSDateComponentUndefined second:NSDateComponentUndefined];
 }
 
 + (NSDate *)dateWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
-    return [NSDate dateWithYear:0 month:0 day:0 hour:hour minute:minute second:second];
+    return [NSDate dateWithYear:NSDateComponentUndefined month:NSDateComponentUndefined day:NSDateComponentUndefined hour:hour minute:minute second:second];
 }
 
 + (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSTimeZone *tz = [NSTimeZone defaultTimeZone];
+    return [NSDate dateWithYear:year month:month day:day hour:hour minute:minute second:second timeZone:tz];
+}
+
++ (NSDate *)gmtDateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day {
+    return [NSDate gmtDateWithYear:year month:month day:day hour:NSDateComponentUndefined minute:NSDateComponentUndefined second:NSDateComponentUndefined];
+}
+
++ (NSDate *)gmtDateWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
+    return [NSDate gmtDateWithYear:NSDateComponentUndefined month:NSDateComponentUndefined day:NSDateComponentUndefined hour:hour minute:minute second:second];
+}
+
++ (NSDate *)gmtDateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second {
+    NSTimeZone *tz = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    return [NSDate dateWithYear:year month:month day:day hour:hour minute:minute second:second timeZone:tz];
+}
+
++ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second timeZone:(NSTimeZone *)tz {
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    [calendar setTimeZone:tz];
     NSDateComponents *components = [[NSDateComponents alloc] init];
     [components setYear:year];
     [components setMonth:month];
@@ -50,7 +70,7 @@ NSString * const ISOTimeFormat = @"HH:mm:ss.SSSSSS";
     return [calendar dateFromComponents:components];
 }
 
-- (NSString*) ISODate
+- (NSString *)ISODate
 {
     NSDateFormatter *f = [[NSDateFormatter alloc] init];
     [f setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
@@ -58,7 +78,7 @@ NSString * const ISOTimeFormat = @"HH:mm:ss.SSSSSS";
     return [f stringFromDate:self];
 }
 
-- (NSString*) ISOTime
+- (NSString *)ISOTime
 {
     NSDateFormatter *f = [[NSDateFormatter alloc] init];
     [f setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];

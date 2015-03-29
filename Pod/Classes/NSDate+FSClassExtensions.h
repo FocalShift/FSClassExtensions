@@ -29,6 +29,10 @@
 + (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
 + (NSDate *)dateWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
 + (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
++ (NSDate *)gmtDateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
++ (NSDate *)gmtDateWithHour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
++ (NSDate *)gmtDateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second;
++ (NSDate *)dateWithYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day hour:(NSInteger)hour minute:(NSInteger)minute second:(NSInteger)second timeZone:(NSTimeZone *)tz;
 - (NSString*)ISODate;
 - (NSString*)ISOTime;
 @end
